@@ -1,0 +1,98 @@
+###
+# Enterprise MCP Integration API - Test Requests
+# Test these endpoints using the VS Code REST Client extension
+# Server running on: http://localhost:5220
+###
+
+### Root API Information
+GET http://localhost:5220/
+Accept: application/json
+
+### Microsoft Docs Search - Single Endpoint
+POST http://localhost:5220/api/msdocsping
+Content-Type: application/json
+
+{
+  "query": "Azure Functions deployment best practices"
+}
+
+###
+
+### Microsoft Docs Search - .NET Specific
+POST http://localhost:5220/api/msdocsping
+Content-Type: application/json
+
+{
+  "query": "ASP.NET Core dependency injection"
+}
+
+###
+
+### Microsoft Docs Search - AI/ML
+POST http://localhost:5220/api/msdocsping
+Content-Type: application/json
+
+{
+  "query": "Azure OpenAI service integration examples"
+}
+
+###
+
+### Basic Microsoft Documentation Search (Primary "pingmsdocs" functionality)
+POST https://localhost:7299/api/microsoftdocs/search
+Content-Type: application/json
+Accept: application/json
+
+{
+  "query": "Azure Virtual Machine pricing and cost optimization"
+}
+
+###
+
+### Advanced Search with Filters
+POST https://localhost:7299/api/microsoftdocs/search/advanced
+Content-Type: application/json
+Accept: application/json
+
+{
+  "query": "Azure storage account types",
+  "minContentLength": 200,
+  "maxContentLength": 1500,
+  "requiredKeywords": ["pricing", "performance"],
+  "maxResults": 3
+}
+
+###
+
+### Batch Search Multiple Queries
+POST https://localhost:7299/api/microsoftdocs/search/batch
+Content-Type: application/json
+Accept: application/json
+
+{
+  "queries": [
+    "Azure Virtual Machines pricing",
+    "Azure App Service features",
+    "Azure Storage cost optimization"
+  ]
+}
+
+###
+
+### Test Error Handling - Empty Query
+POST https://localhost:7299/api/microsoftdocs/search
+Content-Type: application/json
+Accept: application/json
+
+{
+  "query": ""
+}
+
+###
+
+### Test Error Handling - No Body
+POST https://localhost:7299/api/microsoftdocs/search
+Content-Type: application/json
+Accept: application/json
+
+###

@@ -1,0 +1,6 @@
+@EnterpriseMcpIntegration_HostAddress = http://localhost:5220
+
+GET {{EnterpriseMcpIntegration_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

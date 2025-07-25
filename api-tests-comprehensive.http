@@ -1,0 +1,101 @@
+### Enterprise MCP Integration API - Test Collection
+### Use with REST Client extension in VS Code or similar tools
+
+@baseUrl = http://localhost:5220
+@contentType = application/json
+
+### Test 1: Basic Microsoft Docs Search - AI Topics
+POST {{baseUrl}}/api/msdocsping
+Content-Type: {{contentType}}
+
+{
+  "query": "What is artificial intelligence in Microsoft Azure"
+}
+
+### Test 2: .NET Specific Documentation
+POST {{baseUrl}}/api/msdocsping
+Content-Type: {{contentType}}
+
+{
+  "query": "dependency injection patterns in .NET Core"
+}
+
+### Test 3: ASP.NET Core Web APIs
+POST {{baseUrl}}/api/msdocsping
+Content-Type: {{contentType}}
+
+{
+  "query": "how to create RESTful APIs with ASP.NET Core"
+}
+
+### Test 4: Entity Framework Documentation
+POST {{baseUrl}}/api/msdocsping
+Content-Type: {{contentType}}
+
+{
+  "query": "Entity Framework Core database migrations"
+}
+
+### Test 5: Azure Services Integration
+POST {{baseUrl}}/api/msdocsping
+Content-Type: {{contentType}}
+
+{
+  "query": "Azure App Service deployment best practices"
+}
+
+### Test 6: Performance and Optimization
+POST {{baseUrl}}/api/msdocsping
+Content-Type: {{contentType}}
+
+{
+  "query": "async await performance optimization .NET"
+}
+
+### Test 7: Security Topics
+POST {{baseUrl}}/api/msdocsping
+Content-Type: {{contentType}}
+
+{
+  "query": "authentication and authorization in ASP.NET Core"
+}
+
+### Test 8: Testing and Quality Assurance
+POST {{baseUrl}}/api/msdocsping
+Content-Type: {{contentType}}
+
+{
+  "query": "unit testing with xUnit and Moq in .NET"
+}
+
+### Test 9: Error Handling - Invalid Request (Empty Query)
+POST {{baseUrl}}/api/msdocsping
+Content-Type: {{contentType}}
+
+{
+  "query": ""
+}
+
+### Test 10: Error Handling - Malformed JSON
+POST {{baseUrl}}/api/msdocsping
+Content-Type: {{contentType}}
+
+{
+  "query": "valid query",
+  "invalidField": 123
+}
+
+### Health Check Endpoint
+GET {{baseUrl}}/health
+
+### Swagger Documentation
+GET {{baseUrl}}/swagger
+
+### OpenAPI JSON Schema
+GET {{baseUrl}}/swagger/v1/swagger.json
+
+### Test with PowerShell (Alternative)
+# Invoke-RestMethod -Uri "http://localhost:5220/api/msdocsping" -Method POST -ContentType "application/json" -Body '{"query": "Azure Functions development guide"}'
+
+### Test with cURL (Alternative) 
+# curl -X POST "http://localhost:5220/api/msdocsping" -H "Content-Type: application/json" -d "{\"query\": \"Azure Functions development guide\"}"
