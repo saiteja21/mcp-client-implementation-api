@@ -1,4 +1,4 @@
-# Enterprise MCP Integration API
+# MCP Client Implementation API
 
 ![.NET Version](https://img.shields.io/badge/.NET-9.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -21,7 +21,7 @@
 
 ## 🎯 Overview
 
-The **Enterprise MCP Integration API** is a production-ready .NET 9.0 Web API that provides seamless integration with Model Context Protocol (MCP) servers to deliver Microsoft documentation search capabilities. Built with enterprise-grade patterns, this API serves as a bridge between client applications and Microsoft Learn's documentation through MCP protocol communication.
+The **MCP Client Implementation API** is a production-ready .NET 9.0 Web API that provides seamless integration with Model Context Protocol (MCP) servers to deliver Microsoft documentation search capabilities. Built with enterprise-grade patterns, this API serves as a bridge between client applications and Microsoft Learn's documentation through MCP protocol communication. You can add other endpoints or other MCP server with the base sample.
 
 ### 🌟 Key Features
 
@@ -246,7 +246,7 @@ Content-Type: application/json
     "MaxRetryAttempts": 3
   },
   "Enterprise": {
-    "ServiceName": "Enterprise MCP Integration API",
+    "ServiceName": "MCP Client Implementation API",
     "Version": "1.0.0",
     "Environment": "Development"
   }
